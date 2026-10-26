@@ -20,9 +20,9 @@
     {"id": "R2", "jesli":[["czas_do_zajec","<",30]], "to":["w_czas_do_zajec","malo"],"metafora":"nie zdążysz dojść na zajęcia"},
     {"id": "R3", "jesli":[["czas_do_autobusu",">=",30]], "to":["w_czas_autobusem","malo"],"metafora":"nie zdążysz dojechać autobusem na zajęcia"},
     {"id": "R4", "jesli":[["czas_do_autobusu","<",30]], "to":["w_czas_autobusem","wystarczajaco"],"metafora":"zdążysz dojechać autobusem na zajęcia"},
-    {"id": "R5", "jesli":[["temperatura","<",0]], "to":["w_temepratura","zimno"], "metafora":"poniżej 0 jest zimno"},
-    {"id": "R6", "jesli":[["temperatura",">",35]], "to":["w_temepratura","goraco"], "metafora":"powyżej 35 jest gorąco"},
-    {"id": "R7", "jesli":[["temperatura","<=",35],["temperatura",">=",0]], "to":["w_temepratura","umiarkowanie"], "metafora":"między 0 a 35 stopni jest umiarkowanie"},
+    {"id": "R5", "jesli":[["temperatura","<",0]], "to":["w_temperatura","zimno"], "metafora":"poniżej 0 jest zimno"},
+    {"id": "R6", "jesli":[["temperatura",">",35]], "to":["w_temperatura","goraco"], "metafora":"powyżej 35 jest gorąco"},
+    {"id": "R7", "jesli":[["temperatura","<=",35],["temperatura",">=",0]], "to":["w_temperatura","umiarkowanie"], "metafora":"między 0 a 35 stopni jest umiarkowanie"},
     {"id":"R8", "jesli":[["samochod","==","tak"],["prawo_jazdy","==","tak"]], "to":["could_car","tak"],"metafora":"masz samochod i prawo jazdy, więc możesz jechać samochodem"},
     {"id": "R9", "jesli":[["samochod","==","nie"],["prawo_jazdy","==","tak"]], "to":["could_car","nie"],"metafora":"masz prawo jazdy, ale nie masz samochodu, więc nie możesz jechać samochodem"},
     {"id": "R10", "jesli":[["samochod","==","tak"],["prawo_jazdy","==","nie"]], "to":["could_car","nie"],"metafora":"masz samochod, ale nie masz prawa jazdy, więc nie możesz jechać samochodem"},
@@ -36,6 +36,6 @@
     {"id": "R106", "jesli":[["w_czas_do_zajec","==","wystarczajaco"],["pogoda","==","pada"]], "to":["transport","pieszo"], "metafora":"masz czas, ale pada, więc na rowerze zmokniesz", "coto":"spacer jest zdrowy i nie zmokniesz jak na rowerze, ale musisz mieć parasol lub kurtkę przeciwpadaową"},
     {"id": "R107", "jesli":[["w_czas_do_zajec","==","wystarczajaco"],["pogoda","==","słońce"],["w_temperatura","==","zimno"]], "to":["transport","pieszo"], "metafora":"masz czas, ale jest zimno, więc na rowerze się przeziębisz, pojdź pieszo", "coto":"spacer jest zdrowy i nie zmarzniesz jak na rowerze, ale musisz mieć ciepłą kurtkę"},
     {"id": "R108", "jesli":[["w_czas_do_zajec","==","wystarczajaco"],["pogoda","==","słońce"],["w_temperatura","==","umiarkowanie"]], "to":["transport","rower"], "metafora":"masz czas, i jest ładna pogoda, możes pojechać rowerem", "coto":"rowerem dojedziesz najszybciej"},
-    {"id": "R109", "jesli":[["w_czas_do_zajec","==","wystarczajaco"],["pogoda","==","słońce"],["w_temperatura","==","gorąco"]], "to":["transport","rower"], "metafora":"masz czas, ale jest lampa, jedź rowerem bo inaczej się przegrzejesz", "coto":"rowerem dojedziesz najszybciej"}
+    {"id": "R109", "jesli":[["w_czas_do_zajec","==","wystarczajaco"],["pogoda","==","słońce"],["w_temperatura","==","goraco"]], "to":["transport","rower"], "metafora":"masz czas, ale jest lampa, jedź rowerem bo inaczej się przegrzejesz", "coto":"rowerem dojedziesz najszybciej"}
   ]
 }

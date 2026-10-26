@@ -52,7 +52,6 @@ def wnioskuj_wstecz(baza, cel, fakty, zapytaj, slad=None, powod=None):
 
     reguly = [r for r in baza["reguly"] if r["to"][0] == cel]
 
-    # Wniosek bez reguł to luka w bazie: nie pytamy użytkownika o gotową decyzję.
     if not reguly and baza["atrybuty"][cel]["typ"] == "wniosek":
         fakty[cel] = None
         return None
@@ -99,9 +98,8 @@ def zapytaj_konsola(baza):
 
 if __name__ == "__main__":
     # Część 5 instrukcji: tu podmieniasz plik bazy i przykładowe fakty na swoje.
-    PLIK_BAZY = Path(__file__).parent.parent / "wiedza" / "moja_dziedzina.json"
-    # FAKTY = {"temperatura": 18, "czas_do_zajec": 10, "czas_do_autobusu": 30, "czas_pieszo": 15, "pogoda": "deszcz", "samochod": "tak", "prawo_jazdy": "tak"}
-    FAKTY = {}
+    PLIK_BAZY = Path(__file__).parent.parent / "wiedza" / "kawa.json"
+    FAKTY = {"temperatura": 18, "pora_dnia": "rano", "dodatek": "brak", "kofeina_ok": "tak"}
 
     baza = wczytaj_baze(PLIK_BAZY)
     cel = baza["cel"]
