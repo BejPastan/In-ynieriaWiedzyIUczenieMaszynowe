@@ -112,3 +112,29 @@ if __name__ == "__main__":
     slad = []
     print("Polecam:", wnioskuj_wstecz(baza, cel, {}, zapytaj_konsola(baza), slad))
     print("Reguły:", " -> ".join(slad))
+
+
+def coto(baza, slad):
+    """Zwraca opis końcowego wniosku ('coto') na podstawie reguły, która wywnioskowała cel."""
+    cel = baza.get("cel")
+    reguly_po_id = {r["id"]: r for r in baza["reguly"]}
+    for id_ in reversed(slad):
+        regula = reguly_po_id.get(id_)
+        if regula is not None and regula["to"][0] == cel:
+            return regula.get("coto", f"{cel} = {regula['to'][1]}")
+    return f"Brak opisu dla celu {cel}."
+
+
+def wyjasnij_jak(baza, slad):
+    """Zwraca listę kroków opisujących ślad wnioskowania (reguły i ich metafory)."""
+    reguly_po_id = {r["id"]: r for r in baza["reguly"]}
+    kroki = []
+    for id_ in slad:
+        regula = reguly_po_id.get(id_)
+        if regula is None:
+            kroki.append(f"{id_}: (reguła o tym identyfikatorze nie istnieje)")
+            continue
+        atrybut, wartosc = regula["to"]
+        metafora = regula.get("metafora") or f"wniosek: {atrybut} = {wartosc}"
+        kroki.append(f"{id_}: {metafora}")
+    return kroki

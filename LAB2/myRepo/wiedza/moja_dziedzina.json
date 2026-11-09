@@ -4,7 +4,6 @@
   "atrybuty": {
     "czas_do_zajec": {"typ": "liczba", "pytanie": "Za ile zaczynam zajęcia", "zakres": [0, 120]},
     "czas_do_autobusu": {"typ": "liczba", "pytanie": "Ile czasu będziesz jechać autobusem", "zakres": [0, 120]},
-    "czas_pieszo": {"typ": "liczba", "pytanie": "Ile czasu będziesz iść pieszo", "zakres": [0, 120]},
     "pogoda": {"typ": "wybor", "pytanie": "Jaka jest pogoda", "wartosci": ["pada", "słońce"]},
     "temperatura": {"typ": "liczba", "pytanie": "Jaka jest temperatura na zewnątrz (°C)?", "zakres": [-30, 45]},
     "samochod":{"typ":"wybor","pytanie":"Czy masz saomchod?", "wartosci":["tak","nie"]},
